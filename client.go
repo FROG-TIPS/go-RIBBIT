@@ -36,7 +36,6 @@ func NewSpecialClient(url string) Client {
 func (self *client) Croak() (tips []Tip, err error) {
 	url := self.url()
 	url.Path = "api/1/tips/"
-	log.Println(url.String())
 	rawCroak, err := self.doRequest(url.String())
 	if err != nil {
 		return
